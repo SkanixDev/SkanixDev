@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Roboto&display=swap');
+
+/*  ROOT */
+
+:root{
+    --main-white-color: rgb(236, 236, 236);
+    --black-color: rgb(20, 20, 20);
+    --main-bg-color: #252525;
+}
+
+
+*{
+    margin: 0 auto;
+}
+body{
+    background-color: var(--main-bg-color);
+    overflow-x: hidden;
+}
+
+header{
+    background-image: url('../img/bg_main.jpg');
+    object-fit: fill;
+    position: relative;
+}
+
+header img{ 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    bottom: -5px;
+}
+
+.big-title{
+    font-family: 'Righteous';
+    color: var(--main-white-color);
+    position: absolute;
+    font-size: 15vw;
+    letter-spacing: 30px;
+    left: 50%;
+    top: 1em;
+    transform: translate(-50%, 0);
+    animation: fadein 1s ease-out;
+}
+
+header .name-logo{
+    font-family: 'Righteous';
+    color: var(--main-white-color);
+    position: absolute;
+    left: 1em;
+    top: 0.5em;
+    font-size: 50px;
+    transform: rotate(90deg);
+    transition: all 0.5s ease-in-out;
+    z-index: 2;
+}
+header .name-logo:hover{
+    transform: rotate(-90deg);
+}
+
+header ul{
+    position: absolute;
+    left: 50%; 
+    transform: translate(-50%, 0);
+    display: flex;
+    z-index: 2;
+    animation: fadein 1s;
+}
+
+
+header li{
+    list-style: none;
+    padding: 35px 40px;
+    font-size: 20px;
+    transition: transform 0.5s;
+    position: relative;
+}
+
+header li a{
+    color: var(--main-white-color);
+    font-family: 'Hammersmith One', sans-serif;
+    text-decoration: none;
+}
+
+header li:hover{
+    transform: translate(0, -5px);
+}
+
+header li::before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 3px;
+    background-color: var(--main-white-color);
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+header li:hover::before{
+    opacity: 1;
+    width: 50%;
+    height: 3px;
+    border-radius: 10px;
+}
+
+header .desc{
+    position: absolute;
+    z-index: 2;
+    color: var(--main-white-color);
+    font-family: 'Righteous';
+    top: 8.9em;
+    letter-spacing: 10px;
+    font-size: 2.1vw;
+    left: 50%;
+    transform: translate(-50%, 0);
+    animation: fadein 1s ease-out;
+}
+
+.hamburger{
+    display: none;
+    z-index: 3;
+}
+.hamburger-lines{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #ffffff;
+}
+
+.class-transition{
+    position: relative;
+    width: 100%;
+    height: 100px;
+}
+
+.clouds-transition{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: -160px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .hamburger{
+        display: block;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        right: 2em;
+        top: 2em;
+    }
+
+    .hamburger.active .hamburger-lines:nth-child(1){
+        transform: translate(8px,0);
+    }
+    .hamburger.active .hamburger-lines:nth-child(2){
+        transform: translate(-8px,0);
+    }
+    header ul{
+        position: fixed;
+        top: -100%;
+        flex-direction: column;
+        transition: all 0.5s ease-in-out;
+        animation: none;
+        background-color: var(--black-color);
+        width: 100%;
+        z-index: 3;
+        border-radius:  0 0 15px 15px;
+    }
+    header ul.active{
+        top: 0%;
+        padding: 0;
+    }
+    header ul li{
+        padding: 20px;
+    }
+    header{
+        height: 700px;
+    }
+
+    header .big-title{
+        top: 2.7em;
+        font-size: 90px;
+        letter-spacing: 20px;
+    }
+    header .desc{
+        letter-spacing: 6px;
+        top: 270px;
+        font-size: 12px;
+    }
+
+    .clouds-transition{
+        width: 150%;
+        top: -100px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    
+}
+
+
+
+/* Animations */
+
+@keyframes fadein {
+    from{
+        opacity: 0;
+        transform: translate(-50%, -50px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}

@@ -1,7 +1,7 @@
 'use client';
 import Navigation from '@/components/Navigation';
 import Header from '@/components/Header';
-import TestSection from '@/components/TestSection';
+import AboutMe from '@/components/AboutMe';
 import useLocoScroll from '@/hooks/useLocomotive';
 import LoaderPage from '@/components/LoaderPage';
 
@@ -17,7 +17,7 @@ export default function Home() {
       <LoaderPage />
       <Navigation />
       <Header />
-      <TestSection />
+      <AboutMe />
     </div>
   );
 }

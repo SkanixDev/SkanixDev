@@ -18,7 +18,7 @@ export default function Header() {
       },
       duration: 4,
       opacity: 1,
-      y: '0',
+      y: '-20px',
       ease: 'power2.out',
       delay: 1,
     });
@@ -65,15 +65,18 @@ export default function Header() {
       className="flex flex-col h-screen items-center justify-center overflow-hidden"
       data-scroll-section
     >
-      <div className="absolute w-full h-screen -z-40" id="hero-leaves-image">
+      <div
+        className="absolute w-screen h-1/2 top-0  -z-50"
+        id="hero-leaves-image"
+      >
         <Image
           src={'/img/bg_leaves.png'}
           alt="background"
           width={1920}
           height={1080}
-          className={`absolute object-cover w-screen h-[1080px] -translate-y-[39rem]`}
+          className={`h-full object-cover`}
         />
-        <span className="absolute w-full h-screen -translate-y-[30rem] sm:-translate-y-[32rem] bg-gradient-to-b from-transparent to-[#181818] " />
+        <span className="absolute w-screen h-full top-0 bg-gradient-to-b from-transparent to-[#181818] " />
       </div>
       <Image
         src={'/svg/left_line_header.svg'}
@@ -102,7 +105,7 @@ export default function Header() {
         data-scroll
         data-scroll-speed="12"
       >
-        Skanix
+        Baptiste
       </h1>
       <h2
         className="z-10 w-fit h-fit -translate-y-[5vw] text-[3vw] md:text-xl"
